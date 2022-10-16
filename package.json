@@ -1,0 +1,24 @@
+{
+  "name": "flippy-knife",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/matter-js": "^0.18.2",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "@box2d/core": "^0.10.0",
+    "@box2d/debug-draw": "^0.10.0",
+    "@pixi/assets": "^6.5.6",
+    "@pixi/basis": "^6.5.6",
+    "matter-js": "^0.18.0",
+    "pixi.js": "^6.5.6"
+  }
+}
