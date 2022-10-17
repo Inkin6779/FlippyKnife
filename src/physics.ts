@@ -7,13 +7,13 @@ export class PhysicsManager {
   readonly isDev: boolean;
 
   constructor(app: Application, engineOptions?: Matter.IEngineDefinition) {
-    this.isDev = import.meta.env.MODE === "development";
+    this.isDev = true; //import.meta.env.MODE === "development";
     this.engine = Engine.create(engineOptions);
     const runner = Runner.create();
 
     if (this.isDev) {
       const debugCanvas = document.createElement("canvas");
-      document.body.appendChild(debugCanvas);
+      document.getElementById("app")!.appendChild(debugCanvas);
       debugCanvas.id = "debug-canvas";
       this.debugRender = Render.create({
         engine: this.engine,

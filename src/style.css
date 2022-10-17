@@ -10,9 +10,15 @@ body {
   height: 100%;
   width: 100%;
   background: black;
+  overflow: hidden;
 }
 
 #debug-canvas {
   position: fixed;
   z-index: 100;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
 }

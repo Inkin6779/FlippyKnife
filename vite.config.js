@@ -10,7 +10,7 @@ export function packSpritesheetsPlugin() {
       format: "pixi.js",
       trim: true,
       padding: 2,
-      path: "./src/assets/packed",
+      path: "./public/packed",
     });
   }
 

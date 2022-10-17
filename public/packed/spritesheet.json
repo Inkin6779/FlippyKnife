@@ -1,0 +1,193 @@
+{
+	"meta": {
+		"image": "spritesheet.png",
+		"size": {"w":109,"h":100},
+		"scale": "1"
+	},
+	"frames": {
+		"weapon_anime_sword.png":
+		{
+			"frame": {"x":16,"y":2,"w":12,"h":30},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":12,"h":30},
+			"sourceSize": {"w":12,"h":30}
+		},
+		"weapon_arrow.png":
+		{
+			"frame": {"x":57,"y":77,"w":7,"h":21},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":7,"h":21},
+			"sourceSize": {"w":7,"h":21}
+		},
+		"weapon_axe.png":
+		{
+			"frame": {"x":44,"y":77,"w":9,"h":21},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":9,"h":21},
+			"sourceSize": {"w":9,"h":21}
+		},
+		"weapon_baton_with_spikes.png":
+		{
+			"frame": {"x":83,"y":30,"w":10,"h":22},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":22},
+			"sourceSize": {"w":10,"h":22}
+		},
+		"weapon_big_hammer.png":
+		{
+			"frame": {"x":2,"y":2,"w":10,"h":37},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":37},
+			"sourceSize": {"w":10,"h":37}
+		},
+		"weapon_bow.png":
+		{
+			"frame": {"x":50,"y":43,"w":7,"h":25},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":7,"h":25},
+			"sourceSize": {"w":7,"h":25}
+		},
+		"weapon_cleaver.png":
+		{
+			"frame": {"x":97,"y":54,"w":8,"h":19},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":8,"h":19},
+			"sourceSize": {"w":8,"h":19}
+		},
+		"weapon_duel_sword.png":
+		{
+			"frame": {"x":46,"y":2,"w":9,"h":30},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":9,"h":30},
+			"sourceSize": {"w":9,"h":30}
+		},
+		"weapon_golden_sword.png":
+		{
+			"frame": {"x":97,"y":2,"w":10,"h":22},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":22},
+			"sourceSize": {"w":10,"h":22}
+		},
+		"weapon_green_magic_staff.png":
+		{
+			"frame": {"x":59,"y":2,"w":8,"h":30},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":8,"h":30},
+			"sourceSize": {"w":8,"h":30}
+		},
+		"weapon_hammer.png":
+		{
+			"frame": {"x":61,"y":43,"w":10,"h":24},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":24},
+			"sourceSize": {"w":10,"h":24}
+		},
+		"weapon_katana.png":
+		{
+			"frame": {"x":26,"y":43,"w":6,"h":29},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":6,"h":29},
+			"sourceSize": {"w":6,"h":29}
+		},
+		"weapon_knife.png":
+		{
+			"frame": {"x":83,"y":56,"w":6,"h":13},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":6,"h":13},
+			"sourceSize": {"w":6,"h":13}
+		},
+		"weapon_knight_sword.png":
+		{
+			"frame": {"x":12,"y":43,"w":10,"h":29},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":29},
+			"sourceSize": {"w":10,"h":29}
+		},
+		"weapon_lavish_sword.png":
+		{
+			"frame": {"x":32,"y":2,"w":10,"h":30},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":30},
+			"sourceSize": {"w":10,"h":30}
+		},
+		"weapon_mace.png":
+		{
+			"frame": {"x":83,"y":2,"w":10,"h":24},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":24},
+			"sourceSize": {"w":10,"h":24}
+		},
+		"weapon_machete.png":
+		{
+			"frame": {"x":97,"y":28,"w":5,"h":22},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":5,"h":22},
+			"sourceSize": {"w":5,"h":22}
+		},
+		"weapon_red_gem_sword.png":
+		{
+			"frame": {"x":2,"y":77,"w":10,"h":21},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":21},
+			"sourceSize": {"w":10,"h":21}
+		},
+		"weapon_red_magic_staff.png":
+		{
+			"frame": {"x":71,"y":2,"w":8,"h":30},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":8,"h":30},
+			"sourceSize": {"w":8,"h":30}
+		},
+		"weapon_regular_sword.png":
+		{
+			"frame": {"x":16,"y":77,"w":10,"h":21},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":21},
+			"sourceSize": {"w":10,"h":21}
+		},
+		"weapon_rusty_sword.png":
+		{
+			"frame": {"x":30,"y":77,"w":10,"h":21},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":21},
+			"sourceSize": {"w":10,"h":21}
+		},
+		"weapon_saw_sword.png":
+		{
+			"frame": {"x":36,"y":43,"w":10,"h":25},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":25},
+			"sourceSize": {"w":10,"h":25}
+		},
+		"weapon_spear.png":
+		{
+			"frame": {"x":2,"y":43,"w":6,"h":30},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":6,"h":30},
+			"sourceSize": {"w":6,"h":30}
+		}
+	}
+}
