@@ -1,7 +1,6 @@
 {
   "name": "flippy-knife",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,8 +10,7 @@
   "devDependencies": {
     "@types/matter-js": "^0.18.2",
     "minimatch": "^5.1.0",
-    "rollup-plugin-execute": "^1.1.1",
-    "spritesheet-js": "^1.2.6",
+    "spritesheet-game": "^1.1.71",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
   },
@@ -21,7 +19,6 @@
     "@pixi/basis": "^6.5.6",
     "@pixi/sound": "^5.0.0",
     "matter-js": "^0.18.0",
-    "pixi.js": "^6.5.6",
-    "spritesheet-game": "^1.1.71"
+    "pixi.js": "^6.5.6"
   }
 }
