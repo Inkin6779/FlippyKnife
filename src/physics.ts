@@ -1,18 +1,15 @@
-import Matter, { Engine, Render, Runner } from "matter-js";
+import { Engine, IEngineDefinition, Render, Runner } from "matter-js";
 import { Application } from "pixi.js";
 
 export class PhysicsManager {
   readonly engine: Engine;
   private debugRender: Render | undefined;
   readonly isDev: boolean;
+  private interval: number | undefined;
 
-  constructor(app: Application, engineOptions?: Matter.IEngineDefinition) {
+  constructor(app: Application, engineOptions?: IEngineDefinition) {
     this.isDev = true; //import.meta.env.MODE === "development";
     this.engine = Engine.create(engineOptions);
-    const runner = Runner.create({
-      isFixed: true,
-      delta: 8,
-    });
 
     if (this.isDev) {
       const debugCanvas = document.createElement("canvas");
@@ -31,7 +28,6 @@ export class PhysicsManager {
       });
 
       Render.run(this.debugRender);
-      Runner.run(runner, this.engine);
 
       app.ticker.add(() => {
         // Position the debug canvas on top of the true one
@@ -41,8 +37,10 @@ export class PhysicsManager {
         debugCanvas.style.left = x + "px";
         debugCanvas.style.top = y + "px";
       });
-    } else {
-      Runner.run(this.engine);
     }
+
+    this.interval = setInterval(() => {
+      Engine.update(this.engine, 10);
+    }, 10);
   }
 }

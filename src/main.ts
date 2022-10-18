@@ -58,13 +58,14 @@ async function start(): Promise<void> {
   sprite.y = app.screen.height / 2;
   app.stage.addChild(sprite);
 
-  const knifeBody = Bodies.rectangle(sprite.x, sprite.y, sprite.width, sprite.height, {});
+  const knifeBody = Bodies.rectangle(sprite.x, sprite.y, sprite.width, sprite.height);
   const ground = Bodies.rectangle(app.screen.width / 2, app.screen.height - 50, 300, 100, {
     isStatic: true,
   });
 
   // add all of the bodies to the world
   Composite.add(physics.engine.world, [knifeBody, ground]);
+  console.log(knifeBody.mass, knifeBody.area, knifeBody);
   const d = Detector.create({
     bodies: [knifeBody, ground],
   });
@@ -78,7 +79,7 @@ async function start(): Promise<void> {
       knifeBody.isStatic = false;
       hasLanded = false;
       // Move 3 units up before applying impulse
-      Body.setPosition(knifeBody, Vector.add(knifeBody.position, Vector.create(0, -3)));
+      Body.setPosition(knifeBody, Vector.add(knifeBody.position, Vector.create(0, -5)));
       Body.applyForce(knifeBody, knifeBody.position, Vector.create(0, -0.3));
       Body.setAngularVelocity(knifeBody, ((Math.random() - 0.5) * 2) / 10);
       if (stopCurrentShake !== null) {
