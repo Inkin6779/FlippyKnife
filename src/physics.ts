@@ -9,7 +9,10 @@ export class PhysicsManager {
   constructor(app: Application, engineOptions?: Matter.IEngineDefinition) {
     this.isDev = true; //import.meta.env.MODE === "development";
     this.engine = Engine.create(engineOptions);
-    const runner = Runner.create();
+    const runner = Runner.create({
+      isFixed: true,
+      delta: 8,
+    });
 
     if (this.isDev) {
       const debugCanvas = document.createElement("canvas");

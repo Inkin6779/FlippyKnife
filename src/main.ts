@@ -1,6 +1,6 @@
-import { Application, IPointData, SCALE_MODES, Sprite, Spritesheet } from "pixi.js";
+import { Application, IPointData, SCALE_MODES, Sprite, Spritesheet, TickerCallback } from "pixi.js";
 import { Assets } from "@pixi/assets";
-import { Bodies, Body, Composite, Detector } from "matter-js";
+import { Bodies, Body, Composite, Detector, Vector } from "matter-js";
 import { PhysicsManager } from "./physics";
 
 Assets.add("sheet", "packed/spritesheet.json?url");
@@ -24,14 +24,18 @@ function randomVectorCircle(r: number = 1): IPointData {
 }
 
 // Super simple screen shake
-function shake(shakeAmount: number, decreaseFactor: number = 1): void {
+function shake(shakeAmount: number, decreaseFactor: number = 1): Function {
   let amountLeft = shakeAmount;
+  const stop = () => {
+    app.stage.x = 0;
+    app.stage.y = 0;
+    app.stage.position;
+    app.ticker.remove(shaker);
+  };
+
   const shaker = (delta: number) => {
     if (amountLeft <= 0) {
-      app.stage.x = 0;
-      app.stage.y = 0;
-      app.stage.position;
-      app.ticker.remove(shaker);
+      stop();
       return;
     }
 
@@ -40,6 +44,7 @@ function shake(shakeAmount: number, decreaseFactor: number = 1): void {
     amountLeft -= delta * decreaseFactor;
   };
   app.ticker.add(shaker);
+  return stop;
 }
 
 async function start(): Promise<void> {
@@ -53,7 +58,7 @@ async function start(): Promise<void> {
   sprite.y = app.screen.height / 2;
   app.stage.addChild(sprite);
 
-  const knifeBody = Bodies.rectangle(sprite.x, sprite.y, sprite.width, sprite.height);
+  const knifeBody = Bodies.rectangle(sprite.x, sprite.y, sprite.width, sprite.height, {});
   const ground = Bodies.rectangle(app.screen.width / 2, app.screen.height - 50, 300, 100, {
     isStatic: true,
   });
@@ -64,9 +69,25 @@ async function start(): Promise<void> {
     bodies: [knifeBody, ground],
   });
 
-  Body.rotate(knifeBody, Math.PI / 10);
-
   let hasLanded = false;
+  let stopCurrentShake: Function | null = null;
+
+  document.getElementById("app")?.addEventListener("click", () => {
+    if (hasLanded) {
+      console.log("clci");
+      knifeBody.isStatic = false;
+      hasLanded = false;
+      // Move 3 units up before applying impulse
+      Body.setPosition(knifeBody, Vector.add(knifeBody.position, Vector.create(0, -3)));
+      Body.applyForce(knifeBody, knifeBody.position, Vector.create(0, -0.3));
+      Body.setAngularVelocity(knifeBody, ((Math.random() - 0.5) * 2) / 10);
+      if (stopCurrentShake !== null) {
+        stopCurrentShake();
+        stopCurrentShake = null;
+      }
+    }
+  });
+
   app.ticker.add(() => {
     sprite.x = knifeBody.position.x;
     sprite.y = knifeBody.position.y;
@@ -74,7 +95,7 @@ async function start(): Promise<void> {
     if (!hasLanded && Detector.collisions(d).length > 0) {
       hasLanded = true;
       knifeBody.isStatic = true;
-      shake(10);
+      stopCurrentShake = shake(10);
     }
   });
 }
